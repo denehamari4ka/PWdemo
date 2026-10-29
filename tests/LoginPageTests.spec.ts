@@ -23,3 +23,14 @@ test("Login with valid data", async ({ page }) => {
     "https://playground.bondaracademy.com/pages/iot-dashboard",
   );
 });
+
+test("Click on Register link", async ({ page }) => {
+  const loginPage = new LoginPage(page);
+
+  await loginPage.formAuthPage();
+  await loginPage.openRegisterPageFromLogin();
+
+  await expect(page).toHaveURL(
+    "https://playground.bondaracademy.com/auth/register",
+  );
+});
