@@ -23,11 +23,6 @@ export class RegisterPage {
     this.loginLink = page.getByRole("link", { name: "Login" });
   }
 
-  async formAuthPage() {
-    await this.page.getByText("Auth").click();
-    await this.page.getByText("Register").click();
-  }
-
   async Register(
     name: string,
     email: string,

@@ -15,11 +15,6 @@ export class LoginPage {
     this.registerLink = page.getByRole("link", { name: "Register" });
   }
 
-  async formAuthPage() {
-    await this.page.getByText("Auth").click();
-    await this.page.getByText("Login").click();
-  }
-
   async Login(email: string, Password: string) {
     await this.emailInput.fill(email);
     await this.passwordInput.fill(Password);

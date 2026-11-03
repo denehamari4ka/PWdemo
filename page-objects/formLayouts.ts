@@ -29,11 +29,6 @@ export class UsingTheGrid {
     });
   }
 
-  async formLayoutsPage() {
-    await this.page.getByText("Forms").click();
-    await this.page.getByText("Form Layouts").click();
-  }
-
   async usingTheGridSignIn(email: string, password: string) {
     await this.usingTheGrigInputEmail.fill(email);
     await this.usingTheGridPasswordInput.fill(password);
