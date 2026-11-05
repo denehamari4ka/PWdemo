@@ -26,7 +26,8 @@ export class LoginPage {
   }
 
   async openRegisterPageFromLogin() {
-    await this.registerLink.dblclick();
+    await this.registerLink.click();
+    await this.registerLink.click();
   }
 
   async emailIsRequired() {

@@ -7,6 +7,8 @@ export class NavigationPage {
   readonly navigationPageAuthRegister: Locator;
   readonly navigationPageForms: Locator;
   readonly navigationPageFormLayouts: Locator;
+  readonly navigationPageMoadalandOverlays: Locator;
+  readonly navigationPageDialog: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -15,6 +17,8 @@ export class NavigationPage {
     this.navigationPageAuthRegister = page.getByText("Register");
     this.navigationPageForms = page.getByText("Forms");
     this.navigationPageFormLayouts = page.getByText("Form Layouts");
+    this.navigationPageMoadalandOverlays = page.getByText("Modal & Overlays");
+    this.navigationPageDialog = page.getByText("Dialog");
   }
 
   async navigateToLoginPage() {
@@ -28,5 +32,9 @@ export class NavigationPage {
   async navigateToFormLayoutsPage() {
     await this.navigationPageForms.click();
     await this.navigationPageFormLayouts.click();
+  }
+  async navigationToDialogPage() {
+    await this.navigationPageMoadalandOverlays.click();
+    await this.navigationPageDialog.click();
   }
 }
