@@ -10,6 +10,7 @@ export class NavigationPage {
   readonly navigationPageMoadalandOverlays: Locator;
   readonly navigationPageDialog: Locator;
   readonly navigationPagePopover: Locator;
+  readonly navigationPageToastr: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -21,6 +22,7 @@ export class NavigationPage {
     this.navigationPageMoadalandOverlays = page.getByText("Modal & Overlays");
     this.navigationPageDialog = page.getByText("Dialog");
     this.navigationPagePopover = page.getByText("Popover");
+    this.navigationPageToastr = page.getByText("Toastr");
   }
 
   async navigateToLoginPage() {
@@ -42,5 +44,9 @@ export class NavigationPage {
   async navigationToPopoverPage() {
     await this.navigationPageMoadalandOverlays.click();
     await this.navigationPagePopover.click();
+  }
+  async navigationToPageToastr() {
+    await this.navigationPageMoadalandOverlays.click();
+    await this.navigationPageToastr.click();
   }
 }
