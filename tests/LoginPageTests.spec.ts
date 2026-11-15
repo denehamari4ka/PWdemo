@@ -5,8 +5,10 @@ import { faker } from "@faker-js/faker";
 test("Login with valid data", async ({ page, navigation }) => {
   const loginPage = new LoginPage(page);
 
+  const ramdomEmail = faker.internet.email({ provider: "test.com" });
+
   await navigation.navigateToLoginPage();
-  await loginPage.login("test@test.com", "test123");
+  await loginPage.login(ramdomEmail, "test123");
 
   await expect(page).toHaveURL(
     "https://playground.bondaracademy.com/pages/iot-dashboard",

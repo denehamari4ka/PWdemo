@@ -1,7 +1,7 @@
 import { test, expect } from "./fixtures";
 import { ToasterPage } from "../page-objects/toasters";
 
-test("Select Bottom Left tItem", async ({ page, navigation }) => {
+test("Select Bottom Left Item", async ({ page, navigation }) => {
   const toasterPage = new ToasterPage(page);
 
   await navigation.navigationToPageToastr();
