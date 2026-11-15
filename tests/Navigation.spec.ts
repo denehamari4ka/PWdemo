@@ -30,3 +30,10 @@ test("Naviagte to From Layouts Page", async ({ page }) => {
     "https://playground.bondaracademy.com/pages/forms/layouts",
   );
 });
+
+test("Navigate to Tables Page", async ({ page }) => {
+  await navigation.navigationToTablesPage();
+  await expect(page).toHaveURL(
+    "https://playground.bondaracademy.com/pages/tables/smart-table",
+  );
+});

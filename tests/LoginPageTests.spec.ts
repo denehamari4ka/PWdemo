@@ -1,5 +1,6 @@
 import { test, expect } from "./fixtures";
 import { LoginPage } from "../page-objects/loginPage";
+import { faker } from "@faker-js/faker";
 
 test("Login with valid data", async ({ page, navigation }) => {
   const loginPage = new LoginPage(page);
