@@ -37,3 +37,17 @@ test("Navigate to Tables Page", async ({ page }) => {
     "https://playground.bondaracademy.com/pages/tables/smart-table",
   );
 });
+
+test("Naviage to Drag and Drops Page", async ({ page }) => {
+  await navigation.navigationToExtraDragDropPage();
+  await expect(page).toHaveURL(
+    "https://playground.bondaracademy.com/pages/extra-components/drag-drop",
+  );
+});
+
+test("Naviage to PDF Download Page", async ({ page }) => {
+  await navigation.navigationToExtraPDFDownloadPage();
+  await expect(page).toHaveURL(
+    "https://playground.bondaracademy.com/pages/extra-components/pdf-download",
+  );
+});

@@ -1,0 +1,15 @@
+import { test, expect } from "./fixtures";
+import { PdfDownloadPage } from "../page-objects/pdfDownloads";
+
+test("Download PDF file", async ({ page, navigation }) => {
+  const pdfDownload = new PdfDownloadPage(page);
+
+  await navigation.navigationToExtraPDFDownloadPage();
+
+  const downloadPromise = page.waitForEvent("download");
+  await pdfDownload.DownloadPDF();
+  const download = await downloadPromise;
+
+  await expect(download.suggestedFilename()).toBe("invoice-sample.pdf");
+  expect(await download.failure()).toBeNull();
+});

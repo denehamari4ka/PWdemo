@@ -13,6 +13,10 @@ export class NavigationPage {
   readonly navigationPageToastr: Locator;
   readonly navigationToTablesDataPage: Locator;
   readonly navigationToSmartTablePage: Locator;
+  readonly navigationExtraComponents: Locator;
+  readonly navigationCalendar: Locator;
+  readonly navigationDragDrop: Locator;
+  readonly navigationPDFDownload: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -27,6 +31,10 @@ export class NavigationPage {
     this.navigationPageToastr = page.getByText("Toastr");
     this.navigationToTablesDataPage = page.getByText("Tables & Data");
     this.navigationToSmartTablePage = page.getByText("Smart Table");
+    this.navigationExtraComponents = page.getByText("Extra Components");
+    this.navigationCalendar = page.getByText("Calendar");
+    this.navigationDragDrop = page.getByText("Drag & Drop");
+    this.navigationPDFDownload = page.getByText("PDF Download");
   }
 
   async navigateToLoginPage() {
@@ -57,5 +65,18 @@ export class NavigationPage {
   async navigationToTablesPage() {
     await this.navigationToTablesDataPage.click();
     await this.navigationToSmartTablePage.click();
+  }
+
+  async navigationToExtraCalendarPage() {
+    await this.navigationExtraComponents.click();
+    await this.navigationCalendar.click();
+  }
+  async navigationToExtraDragDropPage() {
+    await this.navigationExtraComponents.click();
+    await this.navigationDragDrop.click();
+  }
+  async navigationToExtraPDFDownloadPage() {
+    await this.navigationExtraComponents.click();
+    await this.navigationPDFDownload.click();
   }
 }
