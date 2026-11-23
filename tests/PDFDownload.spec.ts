@@ -1,5 +1,5 @@
 import { test, expect } from "./fixtures";
-import { PDFDownloadPage } from "../page-objects/pdfDownloads";
+import { PDFDownloadPage } from "../page-objects/pdfDownload";
 
 test("Download PDF file", async ({ page, navigation }) => {
   const pdfDownload = new PDFDownloadPage(page);
