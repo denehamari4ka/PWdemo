@@ -17,6 +17,7 @@ export class NavigationPage {
   readonly navigationCalendar: Locator;
   readonly navigationDragDrop: Locator;
   readonly navigationPDFDownload: Locator;
+  readonly navigationDatapicker: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -35,6 +36,7 @@ export class NavigationPage {
     this.navigationCalendar = page.getByText("Calendar");
     this.navigationDragDrop = page.getByText("Drag & Drop");
     this.navigationPDFDownload = page.getByText("PDF Download");
+    this.navigationDatapicker = page.getByText("Datepicker");
   }
 
   async navigateToLoginPage() {
@@ -71,12 +73,19 @@ export class NavigationPage {
     await this.navigationExtraComponents.click();
     await this.navigationCalendar.click();
   }
+
   async navigationToExtraDragDropPage() {
     await this.navigationExtraComponents.click();
     await this.navigationDragDrop.click();
   }
+
   async navigationToExtraPDFDownloadPage() {
     await this.navigationExtraComponents.click();
     await this.navigationPDFDownload.click();
+  }
+
+  async navigationToDatapickerPage() {
+    await this.navigationPageForms.click();
+    await this.navigationDatapicker.click();
   }
 }

@@ -1,5 +1,5 @@
 import { test, expect } from "./fixtures";
-import { ModalAndOverlaysPage } from "../page-objects/modal&overlays";
+import { ModalAndOverlaysPage } from "../page-objects/modalAndOverlays";
 
 test("Open Dialog with component", async ({ page, navigation }) => {
   const modalandOverlaysPage = new ModalAndOverlaysPage(page);
