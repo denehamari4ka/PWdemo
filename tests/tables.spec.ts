@@ -1,5 +1,5 @@
 import { test, expect } from "./fixtures";
-import { TablesPage } from "../page-objects/web-tablets";
+import { TablesPage } from "../page-objects/tablets";
 
 // test("Table", async ({ page, navigation }) => {
 //   const tablePage = new TablesPage(page);

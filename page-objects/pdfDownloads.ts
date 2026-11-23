@@ -1,6 +1,6 @@
 import { Page, Locator } from "@playwright/test";
 
-export class PdfDownloadPage {
+export class PDFDownloadPage {
   readonly page: Page;
   readonly DownloadPDFButton: Locator;
 
