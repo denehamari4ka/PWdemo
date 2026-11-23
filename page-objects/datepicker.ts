@@ -7,6 +7,9 @@ export class DatepickerPage {
   readonly rangeDatePickerInput: Locator;
   readonly rangeDatePickerValue1: Locator;
   readonly rangeDatePickerValue2: Locator;
+  readonly minMaxDatePickerInput: Locator;
+  readonly minMaxDatePickerValue: Locator;
+  readonly minMaxDatePickerDisabledValue: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -23,16 +26,34 @@ export class DatepickerPage {
       .locator("nb-calendar-range-day-cell")
       .getByText("30", { exact: true })
       .first();
+    this.minMaxDatePickerInput = page.getByPlaceholder("Min Max Picker");
+    this.minMaxDatePickerValue = page
+      .locator(".day-cell:not(.disabled)")
+      .getByText("20", { exact: true });
+    this.minMaxDatePickerDisabledValue = page
+      .locator("nb-calendar-day-cell.disabled")
+      .getByText("5", { exact: true })
+      .first();
   }
 
-  async commonDatepickerSelect() {
+  async commonDatePickerSelect() {
     await this.commonDatepickerInput.click();
     await this.commonDatepickerValue.click();
   }
 
-  async rangePickerSelect() {
+  async rangeDatePickerSelect() {
     await this.rangeDatePickerInput.click();
     await this.rangeDatePickerValue1.click();
     await this.rangeDatePickerValue2.click();
+  }
+
+  async minMaxDatePickerSelect() {
+    await this.minMaxDatePickerInput.click();
+    await this.minMaxDatePickerValue.click();
+  }
+
+  async minMaxDatePickerDisabledSelect() {
+    await this.minMaxDatePickerInput.click();
+    await this.minMaxDatePickerDisabledValue.click();
   }
 }
