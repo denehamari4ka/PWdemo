@@ -1,7 +1,7 @@
 import { test, expect } from "./fixtures";
 import { TablePage } from "../page-objects/table";
 
-test("Table", async ({ page, navigation }) => {
+test("Edit email in first row", async ({ page, navigation }) => {
   const tablePage = new TablePage(page);
   await navigation.navigationToTablesPage();
 

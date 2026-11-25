@@ -21,7 +21,7 @@ test("Check position", async ({ page, navigation }) => {
 
   await navigation.navigationToPopoverPage();
 
-  await tooltipPage.CheckLeftButtonPosition();
+  await tooltipPage.checkLeftButtonPosition();
   const targetBox = await tooltipPage.leftbutton.boundingBox();
   const tooltipBox = await tooltipPage.leftbuttonTooltip.boundingBox();
 
@@ -35,7 +35,7 @@ test("Hover over Hover Button", async ({ page, navigation }) => {
 
   await navigation.navigationToPopoverPage();
   await expect(tooltipPage.onClickButtonTooltip).toBeHidden();
-  await tooltipPage.ClickOnClickButton();
+  await tooltipPage.clickOnClickButton();
   await expect(tooltipPage.onClickButtonTooltip).toBeVisible();
   await expect(tooltipPage.onClickButtonTooltip).toHaveText(
     "Hello, how are you today?",

@@ -22,13 +22,13 @@ export class DragAndDropPage {
     this.doneItems = this.dragDropDoneList.locator(".example-box");
     this.toDoItems = this.dragDropToDoList.locator(".example-box");
   }
-  async DragAndDropToDone() {
+  async dragAndDropToDone() {
     await this.dragDropGetGroceries.dragTo(this.dragDropDoneList);
     await this.dragDropFeedTheDog.dragTo(this.dragDropDoneList);
     await this.dragDropCleanMyRoom.dragTo(this.dragDropDoneList);
     await this.dragDropHangoutWithFriends.dragTo(this.dragDropDoneList);
   }
-  async DragAndDropToDo() {
+  async dragAndDropToDo() {
     await this.dragDropGetGroceries.dragTo(this.dragDropDoneList);
     await this.dragDropFeedTheDog.dragTo(this.dragDropDoneList);
     await this.dragDropCleanMyRoom.dragTo(this.dragDropDoneList);

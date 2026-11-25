@@ -10,7 +10,7 @@ export class PDFDownloadPage {
       name: "Download PDF",
     });
   }
-  async DownloadPDF() {
+  async downloadPDF() {
     await this.downloadPDFButton.click();
   }
 }

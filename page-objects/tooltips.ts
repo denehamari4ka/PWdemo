@@ -30,14 +30,14 @@ export class TooltipPage {
     await this.page.mouse.move(0, 0);
   }
 
-  async CheckLeftButtonPosition() {
+  async checkLeftButtonPosition() {
     await this.leftbutton.hover();
 
     const targetBox = await this.leftbutton.boundingBox();
     const tooltipBox = await this.leftbuttonTooltip.boundingBox();
   }
 
-  async ClickOnClickButton() {
+  async clickOnClickButton() {
     await this.onClickButton.click();
   }
 }
