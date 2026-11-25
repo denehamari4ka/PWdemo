@@ -2,15 +2,15 @@ import { Page, Locator } from "@playwright/test";
 
 export class PDFDownloadPage {
   readonly page: Page;
-  readonly DownloadPDFButton: Locator;
+  readonly downloadPDFButton: Locator;
 
   constructor(page: Page) {
     this.page = page;
-    this.DownloadPDFButton = page.getByRole("button", {
+    this.downloadPDFButton = page.getByRole("button", {
       name: "Download PDF",
     });
   }
   async DownloadPDF() {
-    await this.DownloadPDFButton.click();
+    await this.downloadPDFButton.click();
   }
 }
